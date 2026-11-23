@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>mObywatel „W tle” – prototyp koncepcyjny</title>
+<meta name="description" content="Klikalny prototyp: sprawy urzędowe przychodzą na ekran blokady i do Dynamic Island. Decydujesz jednym dotknięciem, a to, co nie wymaga decyzji, dzieje się w tle i można to cofnąć.">
+<meta name="theme-color" content="#ffffff">
+<meta name="author" content="Yuxiang Chen, Warsaw University of Technology">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23d4213d'/%3E%3Cpath d='M16 44V24h6l1 3c2-2 5-4 8-4s5 1 6 4c2-2 5-4 8-4 5 0 7 3 7 8v13h-7V32c0-2-1-3-3-3s-4 1-5 3v12h-7V32c0-2-1-3-3-3s-4 1-5 3v12z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="ui.css?v=5">
+<link rel="stylesheet" href="styles.css?v=11">
+<link rel="stylesheet" href="ios.css?v=9">
+</head>
+<body>
+<a class="skip" href="#phone" data-i18n>Przejdź do telefonu</a>
+
+<header class="nav">
+  <div class="nav-in">
+    <span class="brand" data-i18n><span class="brand-mark" aria-hidden="true"></span>mObywatel <b>W tle</b></span>
+    <span class="badge badge-outline nav-badge" data-i18n>Prototyp koncepcyjny</span>
+    <a class="byline" href="https://www.linkedin.com/in/yushawn-chen-65b98838a/" target="_blank" rel="noopener"><span class="avatar avatar-sm" aria-hidden="true">YC</span>Yuxiang Chen · Warsaw University of Technology</a>
+    <div class="nav-r">
+      <a class="btn btn-ghost btn-sm" href="#zasady" data-i18n>Jak to działa</a>
+      <div class="toggle-group sm lang-sw" role="radiogroup" aria-label="Język · Language"><button type="button" class="toggle" role="radio" data-act="lang" data-l="pl" aria-checked="true">PL</button><button type="button" class="toggle" role="radio" data-act="lang" data-l="en" aria-checked="false">EN</button></div>
+    </div>
+  </div>
+</header>
+
+<main class="stage">
+  <div class="intro-col" data-i18n>
+    <span class="badge badge-outline"><i class="dot" aria-hidden="true"></i>mObywatel Challenge</span>
+    <h1 class="hero-t">Państwo, którego <span>prawie nie widać</span>.</h1>
+    <p class="muted">To telefon Oli. Działa naprawdę: przejdź jej historię albo zwiedzaj po swojemu.</p>
+  </div>
+
+  <div class="device-col" id="deviceCol">
+    <div class="device" id="device">
+      <div class="phone" id="phone" data-screen="lock" tabindex="-1" aria-label="Symulowany telefon">
+        <div class="wall" aria-hidden="true"></div>
+        <div class="statusbar" aria-hidden="true">
+          <span id="sbTime">7:12</span>
+          <span class="sb-r">
+            <svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1" fill="currentColor"/><rect x="5" y="5.5" width="3" height="6.5" rx="1" fill="currentColor"/><rect x="10" y="3" width="3" height="9" rx="1" fill="currentColor"/><rect x="15" y="0" width="3" height="12" rx="1" fill="currentColor"/></svg>
+            <span style="font-size:14px">5G</span>
+            <svg viewBox="0 0 27 13"><rect x=".5" y=".5" width="23" height="12" rx="3.5" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="17" height="9" rx="2" fill="currentColor"/><rect x="24.5" y="4.5" width="2" height="4" rx="1" fill="currentColor" opacity=".4"/></svg>
+          </span>
+        </div>
+        <button class="island" id="island" type="button" data-act="island" aria-label="Dynamic Island"></button>
+        <section class="layer lock" id="lock" aria-label="Ekran blokady"></section>
+        <section class="layer home" id="home" aria-label="Ekran główny"></section>
+        <section class="layer app" id="app" aria-label="Aplikacja mObywatel"></section>
+        <div class="banner" id="banner" hidden></div>
+        <div class="docv" id="docv" hidden></div>
+        <div class="sheet-layer" id="ask" hidden></div>
+        <div class="sheet-layer" id="sheet" hidden></div>
+        <div class="fid" id="fid" hidden></div>
+        <div class="itoast-wrap"><div class="itoast" id="toast" role="status" aria-live="polite"></div></div>
+        <button class="homebar" id="homebar" type="button" data-act="homebar" aria-label="Pasek ekranu głównego. Przesuń w górę albo dotknij."></button>
+      </div>
+    </div>
+  </div>
+
+  <aside class="ctx-col" aria-label="Co teraz zrobić">
+    <div class="card" id="ctx"></div>
+  </aside>
+</main>
+
+<section class="features" id="zasady" aria-labelledby="fT">
+  <div class="features-in" data-i18n>
+    <span class="badge badge-secondary">Jak to działa</span>
+    <h2 class="h2" id="fT">Cztery zasady</h2>
+    <div class="f-grid">
+      <div class="card"><div class="card-header"><span class="f-ic" data-ic="bell" style="--c:#f59e0b"></span><h3 class="card-title">Bez otwierania aplikacji</h3><p class="card-desc">Sprawa przychodzi jako powiadomienie z gotową decyzją.</p></div></div>
+      <div class="card"><div class="card-header"><span class="f-ic" data-ic="sliders" style="--c:#6366f1"></span><h3 class="card-title">Ty ustalasz, co dzieje się samo</h3><p class="card-desc">Dla każdej sprawy: Samo, Zapytaj albo Wyłącz.</p></div></div>
+      <div class="card"><div class="card-header"><span class="f-ic" data-ic="lock" style="--c:#dc2626"></span><h3 class="card-title">Pieniądze i dane z Twoją zgodą</h3><p class="card-desc">Zawsze pytamy i potwierdzasz to Face ID.</p></div></div>
+      <div class="card"><div class="card-header"><span class="f-ic" data-ic="undo" style="--c:#16a34a"></span><h3 class="card-title">Wszystko można cofnąć</h3><p class="card-desc">Dziennik „W tle” z przyciskiem Cofnij przez 14 dni.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="author"><span class="avatar avatar-lg" aria-hidden="true">YC</span><span class="author-t"><b>Yuxiang Chen</b><span>Warsaw University of Technology</span></span></div>
+  <div class="author-links">
+    <a class="btn btn-outline btn-sm" href="https://www.linkedin.com/in/yushawn-chen-65b98838a/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM9.5 9h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21h-4z"/></svg>LinkedIn</a>
+    <a class="btn btn-outline btn-sm" href="mailto:chenyuxiang9756@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="2.5"/><path d="M4 7l8 6 8-6"/></svg>chenyuxiang9756@gmail.com</a>
+  </div>
+  <p class="muted" data-i18n>Niezależny prototyp na mObywatel Challenge. To nie jest oficjalna aplikacja. Osoby, firmy i kwoty są fikcyjne, a Face ID i płatności są symulowane.</p>
+</footer>
+
+<!-- telefon: przycisk nad ekranem i karta misji w szufladzie -->
+<div class="m-bar">
+  <button type="button" class="btn btn-secondary btn-sm" data-act="mOpen" id="mBtn">Misja</button>
+  <button type="button" class="btn btn-default btn-sm" data-act="adv" id="mAdv" hidden></button>
+</div>
+<div class="m-layer" id="mLayer" hidden>
+  <div class="drawer-overlay" data-act="mClose"></div>
+  <div class="drawer m-drawer" role="dialog" aria-modal="true" aria-labelledby="mT">
+    <div class="drawer-handle"></div>
+    <div class="drawer-header m-head"><h2 class="drawer-title" id="mT" data-i18n>Historia Oli</h2><div class="toggle-group sm lang-sw" role="radiogroup" aria-label="Język · Language"><button type="button" class="toggle" role="radio" data-act="lang" data-l="pl" aria-checked="true">PL</button><button type="button" class="toggle" role="radio" data-act="lang" data-l="en" aria-checked="false">EN</button></div></div>
+    <div class="drawer-body"><div class="card" id="mCtx"></div></div>
+    <div class="drawer-footer"><p class="muted m-by">Yuxiang Chen · Warsaw University of Technology<br><a href="https://www.linkedin.com/in/yushawn-chen-65b98838a/" target="_blank" rel="noopener">LinkedIn</a> · <a href="mailto:chenyuxiang9756@gmail.com">chenyuxiang9756@gmail.com</a></p></div>
+  </div>
+</div>
+<div class="wtoasts" id="wtoasts" aria-live="polite"></div>
+<div class="sr" id="live" aria-live="polite"></div>
+
+<noscript><p style="padding:20px" data-i18n>Włącz JavaScript w przeglądarce, aby przejść przez interaktywny prototyp.</p></noscript>
+<script src="i18n.js?v=5"></script>
+<script src="app.js?v=12"></script>
+</body>
+</html>
