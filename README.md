@@ -4,7 +4,7 @@ Autor: **Yuxiang Chen**, Warsaw University of Technology · [LinkedIn](https://w
 
 Koncepcja na **mObywatel Challenge**. Sprawy urzędowe przychodzą tam, gdzie już jesteś: na ekran blokady, do powiadomień, do Dynamic Island i do widżetów. Decydujesz jednym dotknięciem i Face ID. To, co nie wymaga decyzji, dzieje się w tle i można to cofnąć.
 
-W przeglądarce nie trzeba się logować ani niczego instalować. Telefon działa jak prawdziwy: możesz go swobodnie zwiedzać (wszystkie aplikacje da się otworzyć), a historia Oli prowadzi przez 9 misji. Misja zalicza się sama, gdy osiągniesz cel, niezależnie od drogi. Żółty pierścień w telefonie podpowiada, co dotknąć; podpowiedzi można wyłączyć.
+W przeglądarce nie trzeba się logować ani niczego instalować. Telefon działa jak prawdziwy: możesz go swobodnie zwiedzać (wszystkie aplikacje da się otworzyć), a historia Oli prowadzi przez 9 misji. Misja zalicza się sama, gdy osiągniesz cel, niezależnie od drogi. Gdy przez kilka sekund nic nie robisz, żółty pierścień w telefonie podpowiada, co dotknąć.
 
 ## Misje
 
@@ -29,6 +29,10 @@ The page opens in Polish by default. The **PL / EN** switch (top right; on phone
 ## Technologia i dane
 
 HTML, CSS i JavaScript bez bibliotek, kluczy API i serwera. Aplikacje w telefonie są zaprojektowane jak natywne aplikacje iOS według Apple Human Interface Guidelines (`ios.css`), a strona wokół telefonu korzysta z komponentów shadcn/ui (`ui.css`). Czytanie na głos korzysta z Web Speech API przeglądarki. Wszystkie osoby, firmy, dokumenty i kwoty są fikcyjne. Podpisy, płatności i Face ID są symulowane i nic nie jest nigdzie wysyłane. Jest to niezależny prototyp koncepcyjny, a nie oficjalna aplikacja mObywatel.
+
+## Link
+
+https://yushawnchen.github.io/mobywatel-w-tle/ (English: https://yushawnchen.github.io/mobywatel-w-tle/?lang=en)
 
 ## Uruchomienie lokalnie
 
