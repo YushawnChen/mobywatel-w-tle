@@ -802,7 +802,7 @@
       body += `<div class="wstack">${ekCard()}${dlCard()}${idCard()}</div>`;
       body += group([row({ ic: 'file', t: 'Dodaj dokument', d: 'Legitymacja, Karta Dużej Rodziny i inne', chev: true, act: 'say', attrs: 'data-msg="W prototypie są 3 dokumenty."' })]);
     } else if (S.mobTab === 'wtle') {
-      body += navL('W tle', 'Dziennik zmian');
+      body += navL('W\u00a0tle', 'Dziennik zmian');
       const nA = S.log.filter(e => e.auto && !e.undone).length, nY = S.log.filter(e => e.you).length;
       body += `<div class="tiles"><div class="tile" style="--c:#34c759"><span class="th">${I.sparkle}Samo</span><span class="tv">${nA}</span><span class="ts">zmiany automatyczne</span></div><div class="tile" style="--c:#007aff"><span class="th">${I.check}Ty</span><span class="tv">${nY}</span><span class="ts">Twoje decyzje</span></div></div>`;
       const days = [];
