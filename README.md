@@ -1,39 +1,46 @@
-# mObywatel „W tle” – klikalny prototyp
+# mObywatel „W tle” (“In the background”): clickable prototype
 
-Autor: **Yuxiang Chen**
+Author: **Yuxiang Chen**
 
-Koncepcja na **mObywatel Challenge**. Sprawy urzędowe przychodzą tam, gdzie już jesteś: na ekran blokady, do powiadomień, do Dynamic Island i do widżetów. Decydujesz jednym dotknięciem i Face ID. To, co nie wymaga decyzji, dzieje się w tle i można to cofnąć.
+A concept for the **mObywatel Challenge**. Official matters come to where you already are: the lock screen, notifications, the Dynamic Island and widgets. You decide with one tap and Face ID. Anything that needs no decision happens in the background, and you can always undo it.
 
-W przeglądarce nie trzeba się logować ani niczego instalować. Telefon działa jak prawdziwy: możesz go swobodnie zwiedzać (wszystkie aplikacje da się otworzyć), a historia Oli prowadzi przez 9 misji. Misja zalicza się sama, gdy osiągniesz cel, niezależnie od drogi. Gdy przez kilka sekund nic nie robisz, żółty pierścień w telefonie podpowiada, co dotknąć.
+No login or installation is needed in the browser. The phone works like a real one: you can explore it freely (every app opens), and Ola's story guides you through 9 missions. A mission completes by itself as soon as you reach its goal, whichever way you get there. If you do nothing for a few seconds, a yellow ring on the phone shows what to tap.
 
-## Misje
+## Missions
 
-1. **Poranek po przeprowadzce** – adres zmienił się sam w CEPiK i urzędzie skarbowym, EKUZ się przedłużyła.
-2. **Nowy dowód osobisty** – zamówienie z powiadomienia, zdjęcie telefonem, status na żywo, rezerwacja godziny i numer w kolejce w Dynamic Island.
-3. **Bank prosi o dane** – widać, co bank dostanie, a czego nie.
-4. **„To nie ja”** – blokada pożyczki na Twój PESEL i gotowe zgłoszenie na policję.
-5. **Zwrot podatku** – PIT policzony z danych urzędu, zatwierdzenie Face ID.
-6. **Fotoradar** – wezwanie bez listu poleconego: wskazanie kierowcy albo zapłata.
-7. **Zapytaj asystenta** – pytania o wyjazd, terminy i to, kto sprawdzał dane.
-8. **Masz kontrolę** – cofnięcie automatycznej zmiany albo zmiana zasady.
-9. **Telefon taty** – Pan Jerzy, 74 lata, w trybie Dostęp z asystą.
+1. **Morning after the move**: the address updated itself in the vehicle register (CEPiK) and at the tax office, and the European Health Insurance Card (EHIC) was renewed.
+2. **New ID card**: order it from a notification, take the photo with the phone, follow a live status, book a pickup time and see your queue number in the Dynamic Island.
+3. **A bank asks for data**: see exactly what the bank gets and what it doesn't.
+4. **“It wasn’t me”**: block a loan taken out on your PESEL number, with a police report ready to send.
+5. **Tax refund**: the tax return is calculated from data the tax office already has, approved with Face ID.
+6. **Speed camera**: a notice without a registered letter; name the driver or pay.
+7. **Ask the assistant**: questions about travel, deadlines and who has checked your data.
+8. **You’re in control**: undo an automatic change or change a rule.
+9. **Dad’s phone**: Mr Jerzy, 74, using Assistive Access.
 
-Dodatkowo 8 odkryć dla osób, które zwiedzają same (np. Dynamic Island, Kalendarz, Notatki, Ustawienia).
+There are also 8 discoveries for people who explore on their own (e.g. the Dynamic Island, Calendar, Notes, Settings).
 
-## Język / Language
+## Why: the data
 
-Strona domyślnie otwiera się po polsku. Przełącznik **PL / EN** w prawym górnym rogu (na telefonie: w szufladzie misji) zmienia język całej strony i telefonu bez utraty postępu. Link z `?lang=en` otwiera od razu wersję angielską. Tłumaczenia są w pliku `i18n.js`.
+The page has a “Dlaczego” (Why) section with four public figures, each linked to its source and to the mission that answers it:
 
-The page opens in Polish by default. The **PL / EN** switch (top right; on phones inside the mission drawer) changes the whole page and the phone without losing progress. Add `?lang=en` to the link to open the English version directly.
+- **38%** of people aged 16–74 did not use a single online public service all year (Statistics Poland (GUS), 2026: 62.1% did).
+- **75%** of 7.5 million PESEL freezes were made in the mObywatel app (Ministry of Digital Affairs, December 2025).
+- **15,151** loan fraud attempts using someone else's identity were stopped by banks in 2025 (Polish Bank Association and BIK, infoDOK report).
+- **22.8%** of people aged 65–74 have at least basic digital skills (Statistics Poland (GUS), 2026).
 
-## Technologia i dane
+## Language
 
-HTML, CSS i JavaScript bez bibliotek, kluczy API i serwera. Aplikacje w telefonie są zaprojektowane jak natywne aplikacje iOS według Apple Human Interface Guidelines (`ios.css`), a strona wokół telefonu korzysta z komponentów shadcn/ui (`ui.css`). Czytanie na głos korzysta z Web Speech API przeglądarki. Wszystkie osoby, firmy, dokumenty i kwoty są fikcyjne. Podpisy, płatności i Face ID są symulowane, a dane z prototypu nie są nigdzie wysyłane. Strona liczy tylko anonimowe odwiedziny (GoatCounter, bez cookies i bez danych osobowych). Jest to niezależny prototyp koncepcyjny, a nie oficjalna aplikacja mObywatel.
+The page opens in Polish by default. The **PL / EN** switch (top right; on phones, inside the mission drawer) changes the language of the whole page and the phone without losing progress. Add `?lang=en` to the link to open the English version directly. Translations live in `i18n.js`.
+
+## Technology and data
+
+HTML, CSS and JavaScript with no libraries, API keys or server. The apps on the phone are designed like native iOS apps following Apple's Human Interface Guidelines (`ios.css`), and the page around the phone uses shadcn/ui components (`ui.css`). Read-aloud uses the browser's Web Speech API. All people, companies, documents and amounts are fictional. Signatures, payments and Face ID are simulated, and no data from the prototype is sent anywhere. The page only counts anonymous visits (GoatCounter, no cookies, no personal data). This is an independent concept prototype, not the official mObywatel app.
 
 ## Link
 
 https://yushawnchen.github.io/mobywatel-w-tle/ (English: https://yushawnchen.github.io/mobywatel-w-tle/?lang=en)
 
-## Uruchomienie lokalnie
+## Run locally
 
-Otwórz `index.html` w przeglądarce lub uruchom `python3 -m http.server` w katalogu repozytorium.
+Open `index.html` in a browser, or run `python3 -m http.server` in the repository folder.
