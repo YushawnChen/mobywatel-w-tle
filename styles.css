@@ -427,3 +427,22 @@ button.icn:active i { transform: scale(.92); }
 .wg-doc { background: linear-gradient(140deg, #ec3b54, #a8142b); color: #fff; }
 .wg-doc .wg-h, .wg-doc .wg-cap { color: rgb(255 255 255 / .85); }
 .wg-big.hot { color: var(--brand); }
+
+/* Dlaczego: dane */
+.why { border-top: 1px solid var(--border); padding: 96px 24px; }
+.why-in { max-width: 1120px; margin: 0 auto; display: grid; justify-items: center; gap: 16px; text-align: center; }
+.why-lead { max-width: 620px; margin: 0; font-size: 16px; line-height: 24px; color: var(--muted-foreground); }
+.why-lead a { color: var(--foreground); font-weight: 600; text-underline-offset: 3px; }
+.why-grid { width: 100%; margin-top: 24px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; text-align: left; }
+.stat { display: grid; grid-row: span 3; grid-template-rows: subgrid; gap: 16px; padding-bottom: 20px; box-shadow: none; }
+.stat .card-header { align-content: start; }
+.stat-n { margin: 0; font-size: 40px; line-height: 44px; font-weight: 600; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+.stat-t { margin: 0; font-size: 14px; line-height: 20px; color: var(--foreground); }
+.stat-a { display: grid; grid-template-rows: 1fr auto; gap: 12px; justify-items: start; padding-top: 16px; border-top: 1px solid var(--border); margin: 0 24px; padding-left: 0; padding-right: 0; }
+.stat-a p { margin: 0; font-size: 13px; line-height: 19px; color: var(--muted-foreground); }
+.stat-a b { color: var(--brand); font-weight: 600; }
+.stat-src { align-self: start; margin: 0 24px; font-size: 12px; line-height: 16px; color: var(--muted-foreground); text-decoration: underline; text-decoration-color: var(--border); text-underline-offset: 3px; }
+.stat-src:hover { color: var(--foreground); }
+.why-note { margin: 8px 0 0; font-size: 12px; color: var(--muted-foreground); }
+@media (max-width: 1180px) { .why-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 900px) { .why { display: none; } }

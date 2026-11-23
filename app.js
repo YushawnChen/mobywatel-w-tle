@@ -1098,6 +1098,7 @@
   /* ---------------- akcje ---------------- */
   const ACT = {
     quest(el) { startQuest(el.dataset.q); },
+    tryq(el) { startQuest(el.dataset.q); window.scrollTo({ top: 0, behavior: 'smooth' }); },
     skip() { const n = nextQuest(); if (n) startQuest(n); },
     hintFlash() {
       const el = applyHint(true);
