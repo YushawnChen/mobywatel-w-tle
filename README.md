@@ -1,6 +1,6 @@
 # mObywatel „W tle” – klikalny prototyp
 
-Autor: **Yuxiang Chen**, Warsaw University of Technology · [LinkedIn](https://www.linkedin.com/in/yushawn-chen-65b98838a/) · chenyuxiang9756@gmail.com
+Autor: **Yuxiang Chen**
 
 Koncepcja na **mObywatel Challenge**. Sprawy urzędowe przychodzą tam, gdzie już jesteś: na ekran blokady, do powiadomień, do Dynamic Island i do widżetów. Decydujesz jednym dotknięciem i Face ID. To, co nie wymaga decyzji, dzieje się w tle i można to cofnąć.
 
