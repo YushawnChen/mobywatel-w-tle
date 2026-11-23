@@ -10,7 +10,7 @@
 <meta name="author" content="Yuxiang Chen, Warsaw University of Technology">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23d4213d'/%3E%3Cpath d='M16 44V24h6l1 3c2-2 5-4 8-4s5 1 6 4c2-2 5-4 8-4 5 0 7 3 7 8v13h-7V32c0-2-1-3-3-3s-4 1-5 3v12h-7V32c0-2-1-3-3-3s-4 1-5 3v12z' fill='%23fff'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="ui.css?v=5">
-<link rel="stylesheet" href="styles.css?v=12">
+<link rel="stylesheet" href="styles.css?v=13">
 <link rel="stylesheet" href="ios.css?v=9">
 </head>
 <body>
@@ -33,7 +33,7 @@
   <div class="intro-col" data-i18n>
     <span class="badge badge-outline"><i class="dot" aria-hidden="true"></i>mObywatel Challenge</span>
     <h1 class="hero-t">Państwo, którego <span>prawie nie widać</span>.</h1>
-    <p class="muted">To telefon Oli. Działa naprawdę: przejdź jej historię albo zwiedzaj po swojemu.</p>
+    <p class="muted">Proste sprawy urzędowe załatwiają się same. Resztę zatwierdzasz jednym dotknięciem na ekranie blokady.</p>
   </div>
 
   <div class="device-col" id="deviceCol">
@@ -71,27 +71,27 @@
 <section class="why" id="dlaczego" aria-labelledby="wT">
   <div class="why-in" data-i18n>
     <span class="badge badge-secondary">Dlaczego</span>
-    <h2 class="h2" id="wT">Państwo jest już w telefonie. Sprawy jeszcze nie.</h2>
-    <p class="why-lead">Z mObywatela korzysta <a href="https://www.gov.pl/web/cyfryzacja/12-milionow-mobywateli-cyfrowe-uslugi-zmieniaja-polske" target="_blank" rel="noopener">12 mln osób</a>. Mimo to o każdej sprawie trzeba pamiętać samemu, znaleźć usługę i wypełnić formularz.</p>
+    <h2 class="h2" id="wT">Ludzie mają aplikację, ale sprawy wciąż pilnują sami.</h2>
+    <p class="why-lead">Z mObywatela korzysta <a href="https://www.gov.pl/web/cyfryzacja/12-milionow-mobywateli-cyfrowe-uslugi-zmieniaja-polske" target="_blank" rel="noopener">12 mln osób</a>. Ale nadal trzeba samemu pamiętać o sprawie, znaleźć usługę i wypełnić formularz.</p>
     <div class="why-grid">
       <article class="card stat">
-        <div class="card-header"><p class="stat-n">38%</p><p class="stat-t">osób w wieku 16–74 lata przez cały rok nie skorzystało z żadnej e-usługi urzędu.</p></div>
-        <div class="card-content stat-a"><p><b>W tle:</b> to, co nie wymaga decyzji, dzieje się samo, np. nowy adres w CEPiK i urzędzie skarbowym.</p><button type="button" class="btn btn-outline btn-sm" data-act="tryq" data-q="noc">Zobacz: misja 1</button></div>
+        <div class="card-header"><p class="stat-n">38%</p><p class="stat-t">osób w wieku 16–74 lata przez rok ani razu nie załatwiło niczego w e-urzędzie.</p></div>
+        <div class="card-content stat-a"><p><b>Rozwiązanie:</b> sprawy, które nie wymagają decyzji, dzieją się same. Na przykład zmiana adresu.</p><button type="button" class="btn btn-outline btn-sm" data-act="tryq" data-q="noc">Wypróbuj w telefonie</button></div>
         <a class="stat-src" href="https://stat.gov.pl/obszary-tematyczne/nauka-i-technika-spoleczenstwo-informacyjne/spoleczenstwo-informacyjne/spoleczenstwo-informacyjne-w-polsce-w-2026-r-,2,16.html" target="_blank" rel="noopener">GUS, 2026 (korzystało 62,1%)</a>
       </article>
       <article class="card stat">
         <div class="card-header"><p class="stat-n">75%</p><p class="stat-t">z 7,5 mln zastrzeżeń PESEL zrobiono w aplikacji mObywatel.</p></div>
-        <div class="card-content stat-a"><p><b>W tle:</b> gdy wystarczy jedno dotknięcie, ludzie działają. Dlatego decyzja przychodzi na ekran blokady.</p><button type="button" class="btn btn-outline btn-sm" data-act="tryq" data-q="dowod">Zobacz: misja 2</button></div>
+        <div class="card-content stat-a"><p><b>Rozwiązanie:</b> gdy coś jest łatwe w aplikacji, ludzie to robią. Dlatego decyzja przychodzi jako powiadomienie na jedno dotknięcie.</p><button type="button" class="btn btn-outline btn-sm" data-act="tryq" data-q="dowod">Wypróbuj w telefonie</button></div>
         <a class="stat-src" href="https://www.gov.pl/web/cyfryzacja/blisko-siedem-i-pol-miliona-polek-i-polakow-zastrzeglo-swoj-pesel-zrob-to-w-mobywatelu-i-miej-spokojne-swieta" target="_blank" rel="noopener">Ministerstwo Cyfryzacji, 12.2025</a>
       </article>
       <article class="card stat">
-        <div class="card-header"><p class="stat-n">15 151</p><p class="stat-t">prób wyłudzenia kredytu na cudze dane udaremniły banki w 2025 r., na 359,7 mln zł.</p></div>
-        <div class="card-content stat-a"><p><b>W tle:</b> „To nie ja” blokuje pożyczkę na Twój PESEL jednym dotknięciem.</p><button type="button" class="btn btn-outline btn-sm" data-act="tryq" data-q="pesel">Zobacz: misja 4</button></div>
+        <div class="card-header"><p class="stat-n">15 151</p><p class="stat-t">razy w 2025 r. banki zatrzymały kredyt brany na cudze dane.</p></div>
+        <div class="card-content stat-a"><p><b>Rozwiązanie:</b> telefon od razu pyta „Czy to Ty?”. Jedno dotknięcie „To nie ja” blokuje kredyt.</p><button type="button" class="btn btn-outline btn-sm" data-act="tryq" data-q="pesel">Wypróbuj w telefonie</button></div>
         <a class="stat-src" href="https://bank.pl/raport-zbp-infodok-w-iv-kw-2025-roku-banki-udaremnily-3-831-prob-wyludzen-kredytow-na-kwote-908-mln-zl/" target="_blank" rel="noopener">ZBP i BIK, raport infoDOK, 01.2026</a>
       </article>
       <article class="card stat">
-        <div class="card-header"><p class="stat-n">22,8%</p><p class="stat-t">osób w wieku 65–74 lata ma choćby podstawowe umiejętności cyfrowe.</p></div>
-        <div class="card-content stat-a"><p><b>W tle:</b> telefon taty w trybie Dostęp z asystą: duże przyciski, jedna sprawa naraz.</p><button type="button" class="btn btn-outline btn-sm" data-act="tryq" data-q="jerzy">Zobacz: misja 9</button></div>
+        <div class="card-header"><p class="stat-n">22,8%</p><p class="stat-t">seniorów (65–74 lata) ma choćby podstawowe umiejętności cyfrowe.</p></div>
+        <div class="card-content stat-a"><p><b>Rozwiązanie:</b> prosty tryb dla seniora: duże przyciski i jedna sprawa naraz.</p><button type="button" class="btn btn-outline btn-sm" data-act="tryq" data-q="jerzy">Wypróbuj w telefonie</button></div>
         <a class="stat-src" href="https://stat.gov.pl/obszary-tematyczne/nauka-i-technika-spoleczenstwo-informacyjne/spoleczenstwo-informacyjne/spoleczenstwo-informacyjne-w-polsce-w-2026-r-,2,16.html" target="_blank" rel="noopener">GUS, 2026</a>
       </article>
     </div>
@@ -104,10 +104,10 @@
     <span class="badge badge-secondary">Jak to działa</span>
     <h2 class="h2" id="fT">Cztery zasady</h2>
     <div class="f-grid">
-      <div class="card"><div class="card-header"><span class="f-ic" data-ic="bell" style="--c:#f59e0b"></span><h3 class="card-title">Bez otwierania aplikacji</h3><p class="card-desc">Sprawa przychodzi jako powiadomienie z gotową decyzją.</p></div></div>
-      <div class="card"><div class="card-header"><span class="f-ic" data-ic="sliders" style="--c:#6366f1"></span><h3 class="card-title">Ty ustalasz, co dzieje się samo</h3><p class="card-desc">Dla każdej sprawy: Samo, Zapytaj albo Wyłącz.</p></div></div>
-      <div class="card"><div class="card-header"><span class="f-ic" data-ic="lock" style="--c:#dc2626"></span><h3 class="card-title">Pieniądze i dane z Twoją zgodą</h3><p class="card-desc">Zawsze pytamy i potwierdzasz to Face ID.</p></div></div>
-      <div class="card"><div class="card-header"><span class="f-ic" data-ic="undo" style="--c:#16a34a"></span><h3 class="card-title">Wszystko można cofnąć</h3><p class="card-desc">Dziennik „W tle” z przyciskiem Cofnij przez 14 dni.</p></div></div>
+      <div class="card"><div class="card-header"><span class="f-ic" data-ic="bell" style="--c:#f59e0b"></span><h3 class="card-title">Bez otwierania aplikacji</h3><p class="card-desc">Sprawa przychodzi jako powiadomienie. Odpowiadasz jednym dotknięciem.</p></div></div>
+      <div class="card"><div class="card-header"><span class="f-ic" data-ic="sliders" style="--c:#6366f1"></span><h3 class="card-title">Ty ustalasz, co dzieje się samo</h3><p class="card-desc">Dla każdego rodzaju spraw wybierasz: Samo, Zapytaj albo Wyłącz.</p></div></div>
+      <div class="card"><div class="card-header"><span class="f-ic" data-ic="lock" style="--c:#dc2626"></span><h3 class="card-title">Pieniądze i dane tylko za Twoją zgodą</h3><p class="card-desc">Płatności i udostępnianie danych zawsze potwierdzasz Face ID.</p></div></div>
+      <div class="card"><div class="card-header"><span class="f-ic" data-ic="undo" style="--c:#16a34a"></span><h3 class="card-title">Wszystko można cofnąć</h3><p class="card-desc">Każdą automatyczną zmianę cofniesz jednym przyciskiem przez 14 dni.</p></div></div>
     </div>
   </div>
 </section>
@@ -139,7 +139,7 @@
 <div class="sr" id="live" aria-live="polite"></div>
 
 <noscript><p style="padding:20px" data-i18n>Włącz JavaScript w przeglądarce, aby przejść przez interaktywny prototyp.</p></noscript>
-<script src="i18n.js?v=7"></script>
+<script src="i18n.js?v=8"></script>
 <script src="app.js?v=14"></script>
 </body>
 </html>
