@@ -38,7 +38,7 @@
     'Bez otwierania aplikacji': 'No need to open the app',
     'Ty ustalasz, co dzieje się samo': 'You decide what happens automatically',
     'Wszystko można cofnąć': 'Everything can be undone',
-    'Niezależny prototyp na mObywatel Challenge. To nie jest oficjalna aplikacja. Osoby, firmy i kwoty są fikcyjne, a Face ID i płatności są symulowane.': 'Independent prototype for the mObywatel Challenge. This is not the official app. People, companies and amounts are fictional; Face ID and payments are simulated.',
+    'Niezależny prototyp na mObywatel Challenge. To nie jest oficjalna aplikacja. Osoby, firmy i kwoty są fikcyjne, a Face ID i płatności są symulowane. Liczymy tylko anonimowe odwiedziny (GoatCounter, bez cookies i bez danych osobowych).': 'Independent prototype for the mObywatel Challenge. This is not the official app. People, companies and amounts are fictional; Face ID and payments are simulated. We only count anonymous visits (GoatCounter, no cookies, no personal data).',
     'Historia Oli': 'Ola’s story',
     'Włącz JavaScript w przeglądarce, aby przejść przez interaktywny prototyp.': 'Turn on JavaScript in your browser to use the interactive prototype.',
     'Nie wiesz, co dalej?': 'Not sure what to do next?',

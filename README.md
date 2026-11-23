@@ -28,7 +28,7 @@ The page opens in Polish by default. The **PL / EN** switch (top right; on phone
 
 ## Technologia i dane
 
-HTML, CSS i JavaScript bez bibliotek, kluczy API i serwera. Aplikacje w telefonie są zaprojektowane jak natywne aplikacje iOS według Apple Human Interface Guidelines (`ios.css`), a strona wokół telefonu korzysta z komponentów shadcn/ui (`ui.css`). Czytanie na głos korzysta z Web Speech API przeglądarki. Wszystkie osoby, firmy, dokumenty i kwoty są fikcyjne. Podpisy, płatności i Face ID są symulowane i nic nie jest nigdzie wysyłane. Jest to niezależny prototyp koncepcyjny, a nie oficjalna aplikacja mObywatel.
+HTML, CSS i JavaScript bez bibliotek, kluczy API i serwera. Aplikacje w telefonie są zaprojektowane jak natywne aplikacje iOS według Apple Human Interface Guidelines (`ios.css`), a strona wokół telefonu korzysta z komponentów shadcn/ui (`ui.css`). Czytanie na głos korzysta z Web Speech API przeglądarki. Wszystkie osoby, firmy, dokumenty i kwoty są fikcyjne. Podpisy, płatności i Face ID są symulowane, a dane z prototypu nie są nigdzie wysyłane. Strona liczy tylko anonimowe odwiedziny (GoatCounter, bez cookies i bez danych osobowych). Jest to niezależny prototyp koncepcyjny, a nie oficjalna aplikacja mObywatel.
 
 ## Link
 

@@ -183,7 +183,33 @@
     f.hidden = true; f.innerHTML = '';
     return gen === S;
   }
+  /* ---------------- anonimowe statystyki (GoatCounter: bez cookies, bez danych osobowych) ----------------
+     Wspólne konto z pierwszym zgłoszeniem, więc wszystko ma przedrostek „w-tle”. Każde zdarzenie liczy się raz na wizytę. */
+  const gcQ = [], gcSent = new Set();
+  function gcSend(p) {
+    const gc = window.goatcounter;
+    if (gc && typeof gc.count === 'function') { gc.count({ path: p.path, title: p.title, event: p.event }); return true; }
+    return false;
+  }
+  function track(name, view = false) {
+    try {
+      const p = view ? { path: '/w-tle/' + name, title: document.title, event: false } : { path: 'w-tle-' + name, title: 'w-tle-' + name, event: true };
+      if (gcSent.has(p.path)) return;
+      gcSent.add(p.path);
+      if (!gcSend(p) && gcQ.length < 60) gcQ.push(p);
+    } catch (e) { /* statystyki nigdy nie psują prototypu */ }
+  }
+  let gcTries = 0;
+  const gcTimer = setInterval(() => {
+    gcTries++;
+    const gc = window.goatcounter;
+    if (gc && typeof gc.count === 'function') { clearInterval(gcTimer); gcQ.splice(0).forEach(p => { try { gcSend(p); } catch (e) { /* ignoruj */ } }); }
+    else if (gcTries > 40) clearInterval(gcTimer);
+  }, 500);
+  const qTag = id => { const i = QUESTS.findIndex(q => q.id === id); return `misja-${i + 1}-${id}`; };
+
   async function unlock(to = 'home') {
+    track('odblokowanie');
     const lk = $('.lk-lock');
     if (lk) { lk.innerHTML = I.lockOpen; lk.classList.add('open'); }
     await wait(330);
@@ -528,6 +554,7 @@
   function discover(id) {
     if (S.disc[id]) return;
     S.disc[id] = true;
+    track('odkrycie-' + id);
     const d = DISC.find(x => x[0] === id);
     webToast(`Odkrycie ${Object.keys(S.disc).length}/${DISC.length}: ${d ? d[1] : id}`);
   }
@@ -535,6 +562,7 @@
   const nextQuest = () => (QUESTS.find(q => S.q[q.id] !== 'done' && q.id !== S.cur) || {}).id;
   function startQuest(id) {
     const q = QMAP[id]; if (!q) return;
+    track(qTag(id) + '-start');
     closeAll();
     S.cur = id;
     if (id === 'jerzy') switchPersona('jerzy', true); else if (S.persona !== 'ola') switchPersona('ola', true);
@@ -550,6 +578,8 @@
     QUESTS.forEach(q => {
       if (S.q[q.id] !== 'done' && q.done()) {
         S.q[q.id] = 'done';
+        track(qTag(q.id) + '-koniec');
+        if (doneN() === QUESTS.length) track('wszystkie-misje');
         if (q.id !== S.cur) webToast(`Przy okazji ukończona misja: ${q.t}`, true);
       }
     });
@@ -1098,9 +1128,10 @@
   /* ---------------- akcje ---------------- */
   const ACT = {
     quest(el) { startQuest(el.dataset.q); },
-    tryq(el) { startQuest(el.dataset.q); window.scrollTo({ top: 0, behavior: 'smooth' }); },
+    tryq(el) { track('dane-' + el.dataset.q); startQuest(el.dataset.q); window.scrollTo({ top: 0, behavior: 'smooth' }); },
     skip() { const n = nextQuest(); if (n) startQuest(n); },
     hintFlash() {
+      track('pomoc');
       const el = applyHint(true);
       if (!el) webToast(advNow() ? 'Teraz przewiń czas przyciskiem w karcie misji.' : (S.cur === 'jerzy' && S.persona !== 'jerzy') ? 'Najpierw weź telefon taty.' : 'Rozejrzyj się w telefonie. Tu nie ma jednego właściwego przycisku.');
     },
@@ -1180,7 +1211,7 @@
     endCall() { S.call = null; render(); },
     say(el) { toast(el.dataset.msg || ''); },
     shutter() { const v = $('.camv .view'); if (v) { v.style.background = '#fff'; setTimeout(() => { v.style.background = ''; }, 120); } toast('Zdjęcie zapisane', true); },
-    reset() { closeAll(); S = fresh(); LIVE[4].title = 'Odbiór jutro o 10:20'; LIVE[4].short = 'Jutro 10:20'; $('#mLayer').hidden = true; S.q.noc = 'active'; push('noc', '3:14'); render(); webToast('Historia zaczyna się od nowa'); },
+    reset() { track('reset'); closeAll(); S = fresh(); LIVE[4].title = 'Odbiór jutro o 10:20'; LIVE[4].short = 'Jutro 10:20'; $('#mLayer').hidden = true; S.q.noc = 'active'; push('noc', '3:14'); render(); webToast('Historia zaczyna się od nowa'); },
     lang(el) { setLang(el.dataset.l); },
     mOpen() { $('#mLayer').hidden = false; },
     mClose() { $('#mLayer').hidden = true; }
@@ -1308,6 +1339,7 @@
   const META = { title: document.title, desc: $('meta[name="description"]').getAttribute('content') };
   function setLang(l, quiet) {
     I18N.lang = l;
+    if (!quiet) track('jezyk-' + l);
     document.documentElement.lang = I18N.lang;
     if (!quiet) closeAll();
     STATIC.forEach(([el, h]) => { el.innerHTML = h; });
@@ -1349,6 +1381,20 @@
 
   S.q.noc = 'active'; push('noc', '3:14');
   if (new URLSearchParams(location.search).get('lang') === 'en') setLang('en', true);
+  track(I18N.lang, true);
+  /* czy ktoś przewija do danych i zasad, i w co klika poza telefonem */
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { track('widok-' + e.target.id); io.unobserve(e.target); } }), { threshold: .35 });
+    ['dlaczego', 'zasady'].forEach(id => { const el = document.getElementById(id); if (el) io.observe(el); });
+  }
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href]'); if (!a) return;
+    const h = a.getAttribute('href');
+    if (a.closest('.why')) track('zrodlo-' + ([...document.querySelectorAll('.why a[href]')].indexOf(a) + 1));
+    else if (/linkedin\.com/.test(h)) track('kontakt-linkedin');
+    else if (h.startsWith('mailto:')) track('kontakt-email');
+    else if (h === '#dlaczego' || h === '#zasady') track('nav-' + h.slice(1));
+  });
   render();
   fit();
   scheduleHint(4000);
